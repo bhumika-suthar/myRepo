@@ -70,15 +70,25 @@ products.forEach((product) => {
 
   button.addEventListener('click', function(container1){
     const myDiv = document.getElementById('cart')
+    const image = document.createElement('div')
 
-    const imageContainer1 = document.createElement("div");
-    imageContainer1.classList.add("image-container");
 
-    const Myname = document.createElement("h2");
-    MimeTypeArrayname.textContent = product.name;
+    const container = document.getElementById("container");
+    const name = document.createElement("div");
+        name.classList.add(name);
+        const image1 = document.createElement("div");
+        name.classList.add(image);
 
-    const price = document.createElement("p");
-  price.textContent = "$" + product.price.toFixed(2);
+        const imageURL = document.createElement("div");
+        name.classList.add(imageURL);
+        
+        cart.appendChild(image);
+        cart.appendChild(name)
+        cart.appentChild(imageURL)
+
+    
+    myDiv.append(image)
+    myDiv.classList.add()
   
 
   })
@@ -92,8 +102,21 @@ products.forEach((product) => {
 
   container.appendChild(productDiv);
 
-
-
-
-
 });
+
+function addProduct(myProduct) {
+  const con = document.createElement('div');
+  li.innerHTML = `
+      <span>${myProduct.name}</span>
+      <button class="add-btn">+</button>
+      <button class="delete-btn">-</button>
+      
+  `;
+  taskList.appendChild(li);
+
+  const deleteBtn = li.querySelector('.delete-btn');
+  deleteBtn.addEventListener('click', function() {
+      li.remove();
+  });
+
+}
